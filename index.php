@@ -1,37 +1,365 @@
-<?php
-// Simulasi data dari ID (dalam aplikasi nyata, data diambil dari database)
-$data = [
-    "407043644449" => [
-        "nama" => "Andi Saputra",
-        "nisn" => "1234567890",
-        "asal_sekolah" => "SMP Negeri 1 Jakarta",
-        "foto" => "foto_kjp.jpg"
-    ]
-];
-
-$id = $_GET['id'] ?? null;
-$info = $data[$id] ?? null;
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Verifikasi KJP</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <meta name="description" content="" />
+
+  <meta name="author" content="" />
+
+  <title>Antrian KJP</title>
+
+  <!-- Custom fonts for this template -->
+
+  <link
+    href="./Antrian KJP_files/all.min.css"
+    rel="stylesheet"
+    type="text/css" />
+
+  <link href="./Antrian KJP_files/css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+
+  <link href="./Antrian KJP_files/sb-admin-2.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this page -->
+
+  <link
+    href="./Antrian KJP_files/dataTables.bootstrap4.min.css"
+    rel="stylesheet" />
 </head>
-<body>
-<div class="container">
-    <h1>Verifikasi KJP</h1>
-    <?php if ($info): ?>
-        <img src="assets/<?= $info['foto'] ?>" alt="Foto Siswa" class="foto">
-        <table>
-            <tr><th>Nama</th><td><?= $info['nama'] ?></td></tr>
-            <tr><th>NISN</th><td><?= $info['nisn'] ?></td></tr>
-            <tr><th>Asal Sekolah</th><td><?= $info['asal_sekolah'] ?></td></tr>
-        </table>
-    <?php else: ?>
-        <p>ID tidak ditemukan.</p>
-    <?php endif; ?>
-</div>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+
+      <div id="content">
+        <!-- Topbar -->
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+
+        <div class="container-fluid">
+          <!-- Page Heading -->
+
+          <!-- DataTales Example -->
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6
+                class="m-0 font-weight-bold text-primary"
+                style="text-align: center">
+                <b>VERIFIKASI ANTRIAN 3</b>
+              </h6>
+            </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table table-bordered"
+                  width="100%"
+                  cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="20%" align="right">
+                        <b> Nomor Registrasi </b>
+                      </td>
+
+                      <td width="2%" align="center"><b>:</b></td>
+
+                      <td><b>6977336776</b></td>
+
+                      <td width="20%" align="left">
+                        <b> Nomor Kartu Keluarga </b>
+                      </td>
+
+                      <td width="2%" align="center"><b>:</b></td>
+
+                      <td width="20%" align="left">
+                        <b>3173052312100015</b>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td width="20%" align="right"><b>Nomor KTP </b></td>
+
+                      <td width="2%" align="center"><b>: </b></td>
+
+                      <td width="29%" align="left">
+                        <b>3173054406100001 </b>
+                      </td>
+
+                      <td width="20%" align="left"><b>Nomor Kartu </b></td>
+
+                      <td width="2%" align="center"><b>: </b></td>
+
+                      <td width="29%" align="left">
+                        <b>504948853030264756 </b>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td width="20%" align="right"><b>Lokasi </b></td>
+
+                      <td width="2%" align="center"><b>:</b></td>
+
+                      <td width="29%"><b>Jakgrosir Kedoya</b></td>
+
+                      <td width="20%" align="left"><b>Tanggal Datang </b></td>
+
+                      <td width="2%" align="center"><b>: </b></td>
+
+                      <td width="29%" align="left"><b>2025-06-19 </b></td>
+                    </tr>
+
+                    <tr>
+                      <td align="center" colspan="6">
+                        <b>Status :
+                          <button
+                            class="btn btn-danger"
+                            type="submit"
+                            name="simpan">
+                            Belum Verifikasi
+                          </button></b>
+
+                        <br />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <br />
+
+              <div class="table-responsive">
+                <form
+                  name="zuma"
+                  method="POST"
+                  action="berhasil.php">
+                  <table width="100%" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td width="40%" align="right">NPP</td>
+
+                        <td width="2%">:</td>
+
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="npp"
+                            name="npp"
+                            maxlength="6" />
+                        </td>
+
+                        <td width="25%" align="right"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <br />
+
+                  <table width="100%" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <input
+                          type="hidden"
+                          class="form-control"
+                          name="antrian"
+                          value="407043644449" />
+
+                        <input
+                          type="hidden"
+                          class="form-control"
+                          name="lokasi"
+                          value="75" />
+
+                        <td align="right" colspan="2" width="50%">
+                          <button
+                            class="btn btn-primary"
+                            type="submit"
+                            name="simpan">
+                            Simpan
+                          </button>
+                        </td>
+
+                        <td align="left" colspan="2" width="50%">
+                          <a
+                            class="btn btn-warning"
+                            href="https://antriankjp.pasarjaya.co.id/"
+                            role="button">
+                            Kembali
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6
+                class="m-0 font-weight-bold text-primary"
+                style="text-align: center">
+                <b>SEARCH ANTRIAN</b>
+              </h6>
+            </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <form
+                  name="zuma"
+                  method="POST"
+                  action="https://verifikasikjp.pasarjaya.co.id/cari_index.php">
+                  <table width="100%" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td width="40%" align="right">
+                          <b>NOMOR REGISTRASI</b>
+                        </td>
+
+                        <td width="2%">:</td>
+
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Nomor Registrasi"
+                            name="npp"
+                            maxlength="14" />
+                        </td>
+
+                        <td width="25%" align="right"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <br />
+
+                  <table width="100%" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <input
+                          type="hidden"
+                          class="form-control"
+                          name="antrian"
+                          value="407043644449" />
+
+                        <input
+                          type="hidden"
+                          class="form-control"
+                          name="lokasi"
+                          value="75" />
+
+                        <td align="center" colspan="2" width="50%">
+                          <button
+                            class="btn btn-primary"
+                            type="submit"
+                            name="simpan">
+                            Cari
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /.container-fluid -->
+      </div>
+
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © IT Department Perumda Pasar Jaya 2021</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+    </div>
+
+    <!-- End of Content Wrapper -->
+  </div>
+
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+
+  <a
+    class="scroll-to-top rounded"
+    href="https://verifikasikjp.pasarjaya.co.id/index.php?id=407043644449#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+
+  <div
+    class="modal fade"
+    id="logoutModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+
+          <button
+            class="close"
+            type="button"
+            data-dismiss="modal"
+            aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          Select "Logout" below if you are ready to end your current session.
+        </div>
+
+        <div class="modal-footer">
+          <button
+            class="btn btn-secondary"
+            type="button"
+            data-dismiss="modal">
+            Cancel
+          </button>
+
+          <a
+            class="btn btn-primary"
+            href="https://verifikasikjp.pasarjaya.co.id/login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Antrian KJP</title>
+
+    <link href="./VerifikasiBerhasil_files/all.min.css" rel="stylesheet" type="text/css">
+    <link href="./VerifikasiBerhasil_files/css" rel="stylesheet">
+
+    <link href="./VerifikasiBerhasil_files/sb-admin-2.min.css" rel="stylesheet">
+
+    <link href="./VerifikasiBerhasil_files/dataTables.bootstrap4.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+    <div id="wrapper">
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content">
+
+                <div class="container-fluid">
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary" style="text-align: center;"><b>VERIFIKASI ANTRIAN 3</b></h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" width="100%" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="20%" align="right"><b> Nomor Registrasi </b></td>
+                                            <td width="2%" align="center"><b>:</b></td>
+                                            <td><b></b></td>
+                                            <td width="20%" align="left"><b> Nomor Kartu Keluarga </b></td>
+                                            <td width="2%" align="center"><b>:</b></td>
+                                            <td width="20%" align="left"><b></b></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%" align="right"><b>Nomor KTP </b></td>
+                                            <td width="2%" align="center"><b>: </b></td>
+                                            <td width="29%" align="left"><b> </b></td>
+                                            <td width="20%" align="left"><b>Nomor Kartu </b></td>
+                                            <td width="2%" align="center"><b>: </b></td>
+                                            <td width="29%" align="left"><b> </b></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%" align="right"><b>Lokasi </b></td>
+                                            <td width="2%" align="center"><b>:</b></td>
+                                            <td width="29%"><b></b></td>
+                                            <td width="20%" align="left"><b>Tanggal Datang </b></td>
+                                            <td width="2%" align="center"><b>: </b></td>
+                                            <td width="29%" align="left"><b> </b></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" colspan="6">
+                                                <b>Status : <button class="btn btn-success" type="submit" name="simpan">Sudah Verifikasi</button></b>
+                                                <br>
+                                                Pada Tanggal : <span id="tanggalRealtime"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br>
+                            <div class="table-responsive">
+                                <form name="zuma" method="POST" action="https://antriankjp.pasarjaya.co.id/">
+                                    <table width="100%" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="40%" align="right">NPP</td>
+                                                <td width="2%">:</td>
+                                                <td><input type="text" class="form-control" placeholder="npp" name="npp" maxlength="6"></td>
+                                                <td width="25%" align="right"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <table width="100%" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <input type="hidden" class="form-control" name="antrian" value="">
+                                                <input type="hidden" class="form-control" name="lokasi" value="">
+                                                <td align="right" colspan="2" width="50%"></td>
+                                                <form name="zuma" method="POST" action="https://antriankjp.pasarjaya.co.id/"></form>
+                                                <td align="left" colspan="2" width="50%"><button class="btn btn-warning" type="submit" name="simpan">Kembali</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary" style="text-align: center;"><b>SEARCH ANTRIAN</b></h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <form name="zuma" method="POST" action="https://verifikasikjp.pasarjaya.co.id/cari_index.php">
+                                    <table width="100%" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="40%" align="right"><b>NOMOR REGISTRASI</b></td>
+                                                <td width="2%">:</td>
+                                                <td><input type="text" class="form-control" placeholder="Nomor Registrasi" name="npp" maxlength="14"></td>
+                                                <td width="25%" align="right"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <table width="100%" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <input type="hidden" class="form-control" name="antrian" value="">
+                                                <input type="hidden" class="form-control" name="lokasi" value="">
+                                                <td align="center" colspan="2" width="50%"><button class="btn btn-primary" type="submit" name="simpan">Cari</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright © IT Department Perumda Pasar Jaya 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
+
+        <!-- End of Content Wrapper -->
+    </div>
+
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+
+    <a
+        class="scroll-to-top rounded"
+        href="https://verifikasikjp.pasarjaya.co.id/index.php?id=407043644449#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="https://verifikasikjp.pasarjaya.co.id/login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function formatDateTime(date) {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+                const day = String(date.getDate()).padStart(2, '0');
+                const hours = String(date.getHours()).padStart(2, '0');
+                const minutes = String(date.getMinutes()).padStart(2, '0');
+                const seconds = String(date.getSeconds()).padStart(2, '0');
+                return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+            }
+
+            const tanggalRealtimeElement = document.getElementById('tanggalRealtime');
+            if (tanggalRealtimeElement) {
+                const now = new Date();
+                tanggalRealtimeElement.textContent = formatDateTime(now);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
